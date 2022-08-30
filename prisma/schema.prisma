@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  //provider = "postgresql"
+  provider = "cockroachdb"
+  url = env("VITE_DATABASE_URL")
+}
+
+model location {
+    id Int @id @default(sequence())
+    name String 
+    festivals festival[]
+}
+
+model festival {
+    id Int @id @default(sequence())
+    title String
+    year Int
+    activities String
+    location_id Int
+    location location @relation(fields: [location_id], references: [id])
+    attendees festival_attendee[]
+}
+
+model attendee {
+    id Int @id @default(sequence())
+    first_name String
+    last_name String
+    festivals festival_attendee[]
+}
+
+model festival_attendee {
+    festival festival @relation(fields: [festival_id], references: [id])
+    festival_id Int
+    attendee attendee @relation(fields: [attendee_id], references: [id])
+    attendee_id Int
+
+    @@id([festival_id, attendee_id])
+}
