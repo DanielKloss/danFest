@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'carbon-block';
-    src: url('/static/CarbonBlock.ttf') format('truetype');
+    src: url('/CarbonBlock.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'jost';
-    src: url('/static/Jost.ttf') format('truetype');
+    src: url('/Jost.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

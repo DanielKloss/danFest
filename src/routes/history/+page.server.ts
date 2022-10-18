@@ -5,27 +5,30 @@ export async function load() {
 	const prisma = new PrismaClient();
 
     let allFests = await prisma.festival.findMany({
-        select: {
-            title: true,
-            year: true,
-            activities: true,
-            location: {
-                select: {
-                    name: true
-                }
-            },
-            attendees: {
-                select: {
-                    attendee: {
-                        select: {
-                            first_name: true,
-                            last_name: true
-                        }
-                    }
-                }
-            }
-        }
-    });
+			select: {
+				title: true,
+				year: true,
+				activities: true,
+				location: {
+					select: {
+						name: true
+					}
+				},
+				attendees: {
+					select: {
+						attendee: {
+							select: {
+								first_name: true,
+								last_name: true
+							}
+						}
+					}
+				}
+			},
+			orderBy: {
+				year: 'desc'
+			}
+		});
 
     await prisma.$disconnect();
 	
