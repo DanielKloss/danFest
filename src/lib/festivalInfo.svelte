@@ -1,22 +1,22 @@
-<script>
+<script lang="ts">
+    import festival from '@prisma/client';
     import Icon from 'svelte-icons-pack/Icon.svelte';
     import ImLocation from "svelte-icons-pack/im/ImLocation";
 
-    /** @type import("@prisma/client").festival **/
-    export let festival;
+    export let currentFestival: festival;
 </script>
 
 <div class="card">
-  <h1 class="title">{festival.year} - {festival.title}</h1>
+  <h1 class="title">{currentFestival.year} - {currentFestival.title}</h1>
   <div class="row">
     <Icon src={ImLocation} />
-    <p class="location">{festival.location.name}</p>
+    <p class="location">{currentFestival.location.name}</p>
   </div>
   <div class="row">
-    <p class="activities">{festival.activities}</p>
+    <p class="activities">{currentFestival.activities}</p>
   </div>
   <div class="attendees">
-      {#each festival.attendees as attendee}
+      {#each currentFestival.attendees as attendee}
           <span class="attendee">{attendee.attendee.first_name} {attendee.attendee.last_name}</span>
       {/each}
   </div>

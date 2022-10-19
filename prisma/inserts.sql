@@ -48,6 +48,7 @@ INSERT INTO festival (title, year, activities, location_id) VALUES ('The with th
 INSERT INTO festival (title, year, activities, location_id) VALUES ('The one that was virtual', 2020, 'Virtual games: Only Connect, Jackbox and Amoung Us', 4);
 INSERT INTO festival (title, year, activities, location_id) VALUES ('The one that was virtual reality', 2021, 'Navrtar Virtual Reality', 4);
 
+INSERT INTO festival_attendee (festival_id, attendee_id) VALUES (1,1);
 INSERT INTO festival_attendee (festival_id, attendee_id) VALUES (1,2);
 INSERT INTO festival_attendee (festival_id, attendee_id) VALUES (1,3);
 INSERT INTO festival_attendee (festival_id, attendee_id) VALUES (1,4);
@@ -109,6 +110,7 @@ INSERT INTO festival_attendee (festival_id, attendee_id) VALUES (7,34);
 INSERT INTO festival_attendee (festival_id, attendee_id) VALUES (7,6);
 INSERT INTO festival_attendee (festival_id, attendee_id) VALUES (7,3);
 INSERT INTO festival_attendee (festival_id, attendee_id) VALUES (7,8);
+INSERT INTO festival_attendee (festival_id, attendee_id) VALUES (7,43);
 INSERT INTO festival_attendee (festival_id, attendee_id) VALUES (8,1);
 INSERT INTO festival_attendee (festival_id, attendee_id) VALUES (8,2);
 INSERT INTO festival_attendee (festival_id, attendee_id) VALUES (8,5);

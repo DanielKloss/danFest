@@ -1,6 +1,7 @@
 <div class="header">
 	<a class="title" href="/">DANFEST</a>
 	<div class="tabs">
+		<a class="tab" href="/">2022</a>
 		<a class="tab" href="/stats">STATS</a>
 		<a class="tab" href="/history">HISTORY</a>
 	</div>
@@ -22,18 +23,10 @@
 		cursor: pointer;
 	}
 
-	.selected {
-		background-color: white;
-	}
-
 	.header {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-		justify-content: space-between;
 		list-style-type: none;
 		background-color: #DE0000;
-		padding: 1rem 0.5rem 0rem 1rem;
+		padding: 0.5rem 0.5rem 0rem 1rem;
 		margin: 0 0 2rem 0;
 	}
 
@@ -44,5 +37,14 @@
 		background-color: #DE0000;
 		border:none;
 		cursor: pointer;
+	}
+
+	@media screen and (min-width:450px){
+		.header {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			justify-content: space-between;
+		}
 	}
 </style>

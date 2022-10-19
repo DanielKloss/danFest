@@ -8,7 +8,7 @@
 
 <div class="festivalContainer">
     {#each festivals as festival}
-        <FestivalInfo {festival}/>
+        <FestivalInfo currentFestival={festival}/>
     {/each}
 </div>
 

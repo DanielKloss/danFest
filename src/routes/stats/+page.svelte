@@ -1,17 +1,23 @@
-<script>
-    /** @type {import('./$types').PageData} */
-    export let data;
-    let numberOfFestivals = data.numberOfFestivals;
+<script lang="ts">
+	import type { PageData } from "./$types";
+	import type { attendeeWithFests } from "../../lib/types/attendee";
+	import type { locationWithFests } from "../../lib/types/location";
 
-    let hallOfFame = data.hallOfFame.sort(function (a, b) {
-        let attendeeA = a.attendance;
-        let attendeeB = b.attendance;
+    export let data: PageData;
+
+    let numberOfFestivals = data.festivalCount;
+    let attendees: Array<attendeeWithFests> = data.attendees;
+    let locations: Array<locationWithFests> = data.locations;
+
+    attendees = attendees.sort(function (a, b) {
+        let attendeeA = a.festivals.length;
+        let attendeeB = b.festivals.length;
         return attendeeA > attendeeB ? -1 : attendeeA > attendeeB ? 1 : 0;
     });
 
-    let locations = data.locations.sort(function (a, b) {
-        let locationA = a.hosted;
-        let locationB = b.hosted;
+    locations = data.locations.sort(function (a, b) {
+        let locationA = a.festivals.length;
+        let locationB = b.festivals.length;
         return locationA > locationB ? -1 : locationA > locationB ? 1 : 0;
     });
 
@@ -25,11 +31,11 @@
                 <p style="text-align: center;">Attended</p>
                 <p style="text-align: right;"></p>
             </div>
-            {#each hallOfFame as attendee}
+            {#each attendees as attendee}
                 <div class="row">
-                    <p>{attendee.firstName} {attendee.lastName}</p>
-                    <p style="text-align: center;">{attendee.attendance}</p>
-                    <p style="text-align: right;">{Math.round(attendee.attendance / numberOfFestivals*100)}%</p>
+                    <p>{attendee.first_name} {attendee.last_name}</p>
+                    <p style="text-align: center;">{attendee.festivals.length}</p>
+                    <p style="text-align: right;">{Math.round(attendee.festivals.length / numberOfFestivals*100)}%</p>
                 </div>
             {/each}
         </div>
@@ -46,8 +52,8 @@
             {#each locations as location}
                 <div class="row">
                     <p>{location.name}</p>
-                    <p style="text-align: center;">{location.hosted}</p>
-                    <p style="text-align: right;">{Math.round(location.hosted / numberOfFestivals*100)}%</p>
+                    <p style="text-align: center;">{location.festivals.length}</p>
+                    <p style="text-align: right;">{Math.round(location.festivals.length / numberOfFestivals*100)}%</p>
                 </div>
             {/each}
         </div>

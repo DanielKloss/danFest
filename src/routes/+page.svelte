@@ -229,5 +229,8 @@
         border: none;
         font-size: 1.5rem;
         padding: 0.5rem;
+
+        -webkit-appearance: none;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 </style>
