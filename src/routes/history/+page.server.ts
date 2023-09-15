@@ -14,6 +14,15 @@ export async function load() {
 						name: true
 					}
 				},
+				subLocations: {
+					select: {
+						subLocation: {
+							select: {
+								name: true
+							}
+						}
+					}
+				},
 				attendees: {
 					select: {
 						attendee: {

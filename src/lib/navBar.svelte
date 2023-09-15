@@ -1,7 +1,7 @@
 <div class="header">
 	<a class="title" href="/">DANFEST</a>
 	<div class="tabs">
-		<a class="tab" href="/">2022</a>
+		<a class="tab" href="/">2023</a>
 		<a class="tab" href="/stats">STATS</a>
 		<a class="tab" href="/history">HISTORY</a>
 	</div>

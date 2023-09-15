@@ -27,7 +27,7 @@
 </script>
 
 <div class="card">
-    <h1 class="title">DanFest 2022</h1>
+    <h1 class="title">DanFest 2023</h1>
     {#each data.tickets as ticket}
         <div class="ticketStatus">
             <p>{ticket.attendees}</p>
@@ -51,33 +51,19 @@
         <h1 class="title">{invitees}</h1>
         <p>Congratulations for getting a ticket for DanFest in this year's ballot. Details of your ticket are below:</p>
 
-        <h1>16th December 2022</h1>
+        <h1>Saturday 16th December 2023</h1>
 
         <div class="ticket">
             <div class="ticketContent">
-                    <h1>Crazier Golf</h1>
+                    <h1>Food, Drinks and Games</h1>
                     <div class="row">
                         <Icon src={ImLocation} />
-                        <p>Boom Battle Bar, Ealing</p>
+                        <p>The New Inn, Ealing</p>
                     </div>
                     <div class="row">
                         <Icon src={ImClock} />
-                        <p>7:30pm - 8:15pm</p>
+                        <p>7:00pm - late</p>
                     </div>
-            </div>
-        </div>
-
-        <div class="ticket">
-            <div class="ticketContent">
-                <h1>Food and Drink</h1>
-                <div class="row">
-                    <Icon src={ImLocation}/>
-                    <p>BrewDog, Ealing</p>
-                </div>
-                <div class="row">
-                    <Icon src={ImClock} />
-                    <p>8:30pm - 11:30pm</p>
-                </div>
             </div>
         </div>
 

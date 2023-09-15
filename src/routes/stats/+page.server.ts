@@ -25,9 +25,17 @@ export async function load() {
         }
     });
 
+    let subLocations = await prisma.subLocation.findMany({
+			select: {
+				id: true,
+				name: true,
+				festivals: true
+			}
+		});
+
     await prisma.$disconnect();
 
     let festivalCount = festivalCountResult._count;
 
-	return { festivalCount, attendees, locations };
+	return { festivalCount, attendees, locations, subLocations };
 }

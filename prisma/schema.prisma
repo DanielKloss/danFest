@@ -3,29 +3,36 @@ generator client {
 }
 
 datasource db {
-  //provider = "postgresql"
-  provider = "cockroachdb"
+  provider = "postgresql"
+  //provider = "cockroachdb"
   url = env("VITE_DATABASE_URL")
 }
 
 model location {
-    id Int @id @default(sequence())
+    id Int @id @default(autoincrement())
     name String 
     festivals festival[]
 }
 
+model subLocation {
+    id Int @id @default(autoincrement())
+    name String
+    festivals festival_subLocation[]
+}
+
 model festival {
-    id Int @id @default(sequence())
+    id Int @id @default(autoincrement())
     title String
     year Int
     activities String
     location_id Int
     location location @relation(fields: [location_id], references: [id])
     attendees festival_attendee[]
+    subLocations festival_subLocation[]
 }
 
 model attendee {
-    id Int @id @default(sequence())
+    id Int @id @default(autoincrement())
     first_name String
     last_name String
     festivals festival_attendee[]
@@ -40,8 +47,24 @@ model festival_attendee {
     @@id([festival_id, attendee_id])
 }
 
+model festival_subLocation {
+    festival festival @relation(fields: [festival_id], references: [id])
+    festival_id Int
+    subLocation subLocation @relation(fields: [subLocation_id], references: [id])
+    subLocation_id Int
+
+    @@id([festival_id, subLocation_id])
+}
+
 model ticket2022 {
-  id Int @id @default(sequence())
+  id Int @id @default(autoincrement())
+  reference String
+  attendees String
+  attending String
+}
+
+model ticket2023 {
+  id Int @id @default(autoincrement())
   reference String
   attendees String
   attending String

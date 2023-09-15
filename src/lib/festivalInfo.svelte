@@ -4,6 +4,8 @@
     import ImLocation from "svelte-icons-pack/im/ImLocation";
 
     export let currentFestival: festival;
+
+    console.log(currentFestival)
 </script>
 
 <div class="card">
@@ -11,6 +13,11 @@
   <div class="row">
     <Icon src={ImLocation} />
     <p class="location">{currentFestival.location.name}</p>
+  </div>
+  <div class="row">
+    {#each currentFestival.subLocations as subLocation}
+      <span class="subLocation">{subLocation.subLocation.name}</span>
+    {/each}
   </div>
   <div class="row">
     <p class="activities">{currentFestival.activities}</p>
@@ -38,6 +45,19 @@
     font-size: 1.5rem;
     font-style: italic;
     margin: 0;
+  }
+
+  .subLocation {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+
+  .subLocation:after {
+    content: " /";
+  }
+
+  .subLocation:last-child:after {
+    content: "";
   }
 
   .activities {

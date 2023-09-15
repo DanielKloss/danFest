@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client';
 export async function load() {
 	const prisma = new PrismaClient();
 
-	let tickets = await prisma.ticket2022.findMany({
+	let tickets = await prisma.ticket2023.findMany({
 		select: {
 			id: true,
 			reference: true,

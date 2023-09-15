@@ -1,13 +1,15 @@
 <script lang="ts">
 	import type { PageData } from "./$types";
-	import type { attendeeWithFests } from "../../lib/types/attendee";
-	import type { locationWithFests } from "../../lib/types/location";
+	import type { attendeeWithFests } from "$lib/types/attendee";
+	import type { locationWithFests } from "$lib/types/location";
+	import type { subLocationWithFests } from "$lib/types/subLocation";
 
     export let data: PageData;
 
     let numberOfFestivals = data.festivalCount;
     let attendees: Array<attendeeWithFests> = data.attendees;
     let locations: Array<locationWithFests> = data.locations;
+    let subLocations: Array<subLocationWithFests> = data.subLocations;
 
     attendees = attendees.sort(function (a, b) {
         let attendeeA = a.festivals.length;
@@ -16,6 +18,12 @@
     });
 
     locations = data.locations.sort(function (a, b) {
+        let locationA = a.festivals.length;
+        let locationB = b.festivals.length;
+        return locationA > locationB ? -1 : locationA > locationB ? 1 : 0;
+    });
+
+    subLocations = data.subLocations.sort(function (a, b) {
         let locationA = a.festivals.length;
         let locationB = b.festivals.length;
         return locationA > locationB ? -1 : locationA > locationB ? 1 : 0;
@@ -54,6 +62,24 @@
                     <p>{location.name}</p>
                     <p style="text-align: center;">{location.festivals.length}</p>
                     <p style="text-align: right;">{Math.round(location.festivals.length / numberOfFestivals*100)}%</p>
+                </div>
+            {/each}
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Activity Types</h2>
+        <div class="table">
+            <div class="row header">
+                <p>Name</p>
+                <p style="text-align: center;">Completed</p>
+                <p style="text-align: right;"></p>
+            </div>
+            {#each subLocations as subLocation}
+                <div class="row">
+                    <p>{subLocation.name}</p>
+                    <p style="text-align: center;">{subLocation.festivals.length}</p>
+                    <p style="text-align: right;">{Math.round(subLocation.festivals.length / numberOfFestivals*100)}%</p>
                 </div>
             {/each}
         </div>
