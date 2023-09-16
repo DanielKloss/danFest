@@ -31,57 +31,61 @@
 
 </script>
 <div class="tableContainer">
-    <div class="card">
-        <h2>Hall of Fame</h2>
-        <div class="table">
-            <div class="row header">
-                <p>Name</p>
-                <p style="text-align: center;">Attended</p>
-                <p style="text-align: right;"></p>
-            </div>
-            {#each attendees as attendee}
-                <div class="row">
-                    <p>{attendee.first_name} {attendee.last_name}</p>
-                    <p style="text-align: center;">{attendee.festivals.length}</p>
-                    <p style="text-align: right;">{Math.round(attendee.festivals.length / numberOfFestivals*100)}%</p>
+    <div class="group">
+        <div class="card">
+            <h2>Hall of Fame</h2>
+            <div class="table">
+                <div class="row header">
+                    <p>Name</p>
+                    <p style="text-align: center;">Attended</p>
+                    <p style="text-align: right;"></p>
                 </div>
-            {/each}
+                {#each attendees as attendee}
+                    <div class="row">
+                        <p>{attendee.first_name} {attendee.last_name}</p>
+                        <p style="text-align: center;">{attendee.festivals.length}</p>
+                        <p style="text-align: right;">{Math.round(attendee.festivals.length / numberOfFestivals*100)}%</p>
+                    </div>
+                {/each}
+            </div>
         </div>
     </div>
 
-    <div class="card">
-        <h2>Venues</h2>
-        <div class="table">
-            <div class="row header">
-                <p>Name</p>
-                <p style="text-align: center;">Hosted</p>
-                <p style="text-align: right;"></p>
-            </div>
-            {#each locations as location}
-                <div class="row">
-                    <p>{location.name}</p>
-                    <p style="text-align: center;">{location.festivals.length}</p>
-                    <p style="text-align: right;">{Math.round(location.festivals.length / numberOfFestivals*100)}%</p>
+    <div class="group">
+        <div class="card">
+            <h2>Venues</h2>
+            <div class="table">
+                <div class="row header">
+                    <p>Name</p>
+                    <p style="text-align: center;">Hosted</p>
+                    <p style="text-align: right;"></p>
                 </div>
-            {/each}
+                {#each locations as location}
+                    <div class="row">
+                        <p>{location.name}</p>
+                        <p style="text-align: center;">{location.festivals.length}</p>
+                        <p style="text-align: right;">{Math.round(location.festivals.length / numberOfFestivals*100)}%</p>
+                    </div>
+                {/each}
+            </div>
         </div>
-    </div>
 
-    <div class="card">
-        <h2>Activity Types</h2>
-        <div class="table">
-            <div class="row header">
-                <p>Name</p>
-                <p style="text-align: center;">Completed</p>
-                <p style="text-align: right;"></p>
-            </div>
-            {#each subLocations as subLocation}
-                <div class="row">
-                    <p>{subLocation.name}</p>
-                    <p style="text-align: center;">{subLocation.festivals.length}</p>
-                    <p style="text-align: right;">{Math.round(subLocation.festivals.length / numberOfFestivals*100)}%</p>
+        <div class="card">
+            <h2>Activity Types</h2>
+            <div class="table">
+                <div class="row header">
+                    <p>Name</p>
+                    <p style="text-align: center;">Fests</p>
+                    <p style="text-align: right;"></p>
                 </div>
-            {/each}
+                {#each subLocations as subLocation}
+                    <div class="row">
+                        <p>{subLocation.name}</p>
+                        <p style="text-align: center;">{subLocation.festivals.length}</p>
+                        <p style="text-align: right;">{Math.round(subLocation.festivals.length / numberOfFestivals*100)}%</p>
+                    </div>
+                {/each}
+            </div>
         </div>
     </div>
 </div>
@@ -91,6 +95,7 @@
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
+        justify-content: center;
     }
 
     .table {
@@ -109,6 +114,12 @@
         align-items: center;
         padding: 0.5rem;
         border-radius: 7px;
+    }
+
+    .group {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
     }
 
     div.table > div:nth-of-type(even){background-color:lightgray;}  
