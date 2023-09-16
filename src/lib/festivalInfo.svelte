@@ -13,8 +13,6 @@
   <div class="row">
     <Icon src={ImLocation} />
     <p class="location">{currentFestival.location.name}</p>
-  </div>
-  <div class="row">
     {#each currentFestival.subLocations as subLocation}
       <span class="subLocation">{subLocation.subLocation.name}</span>
     {/each}
@@ -44,20 +42,16 @@
   .location {
     font-size: 1.5rem;
     font-style: italic;
-    margin: 0;
+    margin-right: 0.5rem;
   }
 
   .subLocation {
     font-size: 0.8rem;
-    margin: 0;
-  }
-
-  .subLocation:after {
-    content: " /";
-  }
-
-  .subLocation:last-child:after {
-    content: "";
+    margin-left: 0;
+    background-color: #838383;
+    border-radius: 10px;
+    padding: 0.4rem;
+    color: white;
   }
 
   .activities {
