@@ -6,6 +6,7 @@
     let ticketReference: string;
 
     $: ticketReferenceEntered = data.tickets.filter(t => t.reference == ticketReference).length > 0;
+    $: ticketReferenceEntered == true ? document.getElementById("referenceInput")?.blur() : console.log("Dont close");
     $: invitees = data.tickets.filter(t => t.reference == ticketReference).flatMap(r => r.attendees);
     $: attendingStatus = data.tickets.filter(t => t.reference == ticketReference).flatMap(r => r.attending);
 
@@ -40,7 +41,7 @@
 <div class="card">
     <h2>Find Out More</h2>
     <p>Enter your ticket reference:</p>
-    <input placeholder="" bind:value={ticketReference}/>
+    <input id="referenceInput" placeholder="" bind:value={ticketReference}/>
 </div>
         
 {#if ticketReferenceEntered}

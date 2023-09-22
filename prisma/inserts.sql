@@ -32,31 +32,31 @@ INSERT INTO attendee (id, first_name, last_name) VALUES (45, 'Rachel', 'Humpreys
 INSERT INTO attendee (id, first_name, last_name) VALUES (46, 'Paul', 'Hardy');
 INSERT INTO attendee (id, first_name, last_name) VALUES (47, 'Celine', 'Parmentier');
 
-INSERT INTO location (name) VALUES ('Birmingham');
-INSERT INTO location (name) VALUES ('Courchevel');
-INSERT INTO location (name) VALUES ('Arabba');
-INSERT INTO location (name) VALUES ('London');
+INSERT INTO location (id, name) VALUES (1, 'Birmingham');
+INSERT INTO location (id, name) VALUES (2, 'Courchevel');
+INSERT INTO location (id, name) VALUES (3, 'Arabba');
+INSERT INTO location (id, name) VALUES (4, 'London');
 
-INSERT INTO subLocation (name) VALUES ('Pub / Bar'); /*1*/
-INSERT INTO subLocation (name) VALUES ('Home'); /*2*/
-INSERT INTO subLocation (name) VALUES ('Themed Activity'); /*3*/
-INSERT INTO subLocation (name) VALUES ('Ski Resort'); /*4*/
-INSERT INTO subLocation (name) VALUES ('Restaurant'); /*5*/
-INSERT INTO subLocation (name) VALUES ('Cinema'); /*6*/
+INSERT INTO subLocation (id, name) VALUES (1, 'Pub / Bar'); /*1*/
+INSERT INTO subLocation (id, name) VALUES (2, 'Home'); /*2*/
+INSERT INTO subLocation (id, name) VALUES (3, 'Themed Activity'); /*3*/
+INSERT INTO subLocation (id, name) VALUES (4, 'Ski Resort'); /*4*/
+INSERT INTO subLocation (id, name) VALUES (5, 'Restaurant'); /*5*/
+INSERT INTO subLocation (id, name) VALUES (6, 'Cinema'); /*6*/
 
-INSERT INTO festival (title, year, activities, location_id) VALUES ('The one where they were in Birmingham', 2010, 'Fab n Fresh and Dan Ciderhands', 1); /*1*/
-INSERT INTO festival (title, year, activities, location_id) VALUES ('The one where they went back to Courchevel', 2011, 'Skiing', 2); /*2*/
-INSERT INTO festival (title, year, activities, location_id) VALUES ('The one where they were in Arabba', 2012, 'Skiing', 3); /*3*/
-INSERT INTO festival (title, year, activities, location_id) VALUES ('The one where Mark Mooned the Cab Driver', 2013, 'Bavarian Beer House', 4); /*4*/
-INSERT INTO festival (title, year, activities, location_id) VALUES ('The one where Nom Encouraged Georgie to TC on the Table', 2014, 'Board Game Cafe and Escape Room and Turkish Meal and Pub', 4); /*5*/
-INSERT INTO festival (title, year, activities, location_id) VALUES ('The one with the new Star Wars Film', 2015, 'Star Wars: the Force Awakens and Pizza Meal and Pub', 4); /*6*/
-INSERT INTO festival (title, year, activities, location_id) VALUES ('The one where Dan threw up a lot', 2016, 'Bavarian Beer House', 4); /*7*/
-INSERT INTO festival (title, year, activities, location_id) VALUES ('The one where Nom fell asleep on the sofa', 2017, 'Quiz, dinner and games at Dans house', 4); /*8*/
-INSERT INTO festival (title, year, activities, location_id) VALUES ('The one where they Played Darts', 2018, 'Pub Dinner and Quiz by Nom and Flight Club', 4); /*9*/
-INSERT INTO festival (title, year, activities, location_id) VALUES ('The one with the Inner Sanctum', 2019, 'Pizza and games at Dans', 4); /*10*/
-INSERT INTO festival (title, year, activities, location_id) VALUES ('The one that was virtual', 2020, 'Virtual games: Only Connect, Jackbox and Amoung Us', 4); /*11*/
-INSERT INTO festival (title, year, activities, location_id) VALUES ('The one that was virtual reality', 2021, 'Navrtar Virtual Reality', 4); /*12*/
-INSERT INTO festival (title, year, activities, location_id) VALUES ('The one where Thomas didnt get a badge', 2022, 'Crazier Golf and Brewdog', 4); /*13*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (1, 'The one where they were in Birmingham', 2010, 'Fab ''n'' Fresh', 1); /*1*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (2, 'The one where they went back to Courchevel', 2011, 'Skiing', 2); /*2*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (3, 'The one where they were in Arabba', 2012, 'Skiing', 3); /*3*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (4, 'The one where Mark Mooned the Cab Driver', 2013, 'Bavarian Beer House', 4); /*4*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (5, 'The one where Nom Encouraged Georgie to TC on the Table', 2014, 'Board Game Cafe, Escape Room, Turkish Meal and Pub', 4); /*5*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (6, 'The one with the new Star Wars Film', 2015, 'Star Wars: the Force Awakens, Pizza Meal and Pub', 4); /*6*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (7, 'The one where Dan threw up a lot', 2016, 'Bavarian Beer House', 4); /*7*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (8, 'The one where Nom fell asleep on the sofa', 2017, 'Quiz, dinner and games at Dan''s house', 4); /*8*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (9, 'The one where they Played Darts', 2018, 'Pub Dinner, Quiz by Nom and Flight Club', 4); /*9*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (10, 'The one with the Inner Sanctum', 2019, 'Pizza and games at Dan''s', 4); /*10*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (11, 'The one that was virtual', 2020, 'Virtual games: Only Connect, Jackbox and Amoung Us', 4); /*11*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (12, 'The one that was virtual reality', 2021, 'Navrtar Virtual Reality', 4); /*12*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (13, 'The one where Thomas didn''t get a badge', 2022, 'Crazier Golf and Brewdog', 4); /*13*/
 
 INSERT INTO festival_subLocation (festival_id, subLocation_id) VALUES (1,1);
 INSERT INTO festival_subLocation (festival_id, subLocation_id) VALUES (1,2);
@@ -207,7 +207,7 @@ INSERT INTO ticket2022 (reference, attendees, attending) VALUES ('m4yfi3ld', 'Pa
 INSERT INTO ticket2023 (reference, attendees, attending) VALUES ('runner', 'Georgie', 'Pending');
 INSERT INTO ticket2023 (reference, attendees, attending) VALUES ('newBaby', 'Nat and Thomas', 'Pending');
 INSERT INTO ticket2023 (reference, attendees, attending) VALUES ('delhi', 'Matt and Jo', 'Pending');
-INSERT INTO ticket2023 (reference, attendees, attending) VALUES ('legacy', 'James and Rachel', 'Pending');
+INSERT INTO ticket2023 (reference, attendees, attending) VALUES ('bettyluna', 'James and Rachel', 'Pending');
 INSERT INTO ticket2023 (reference, attendees, attending) VALUES ('liasons', 'Charlotte and Diego', 'Pending');
 INSERT INTO ticket2023 (reference, attendees, attending) VALUES ('daisy', 'Mark and Nom', 'Pending');
 INSERT INTO ticket2023 (reference, attendees, attending) VALUES ('sywncombe', 'Paul and Celine', 'Pending');
