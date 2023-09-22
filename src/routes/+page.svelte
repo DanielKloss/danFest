@@ -7,7 +7,7 @@
 
     $: ticketReferenceEntered = data.tickets.filter(t => t.reference == ticketReference).length > 0;
     $: {    if(ticketReferenceEntered == true){
-                document.getElementById("searchBox")?.blur()
+                document.getElementById("referenceInput")?.blur()
             }
     }
     $: invitees = data.tickets.filter(t => t.reference == ticketReference).flatMap(r => r.attendees);
