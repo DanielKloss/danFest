@@ -1,12 +1,9 @@
 <script lang="ts">
-    import Icon from 'svelte-icons-pack/Icon.svelte';
-    import ImLocation from "svelte-icons-pack/im/ImLocation";
-    import ImClock from "svelte-icons-pack/im/ImClock";
 	import type { PageData } from './$types';
 
     export let data : PageData;
 
-    let ticketReference: string = "";
+    let ticketReference: string;
 
     $: ticketReferenceEntered = data.tickets.filter(t => t.reference == ticketReference).length > 0;
     $: invitees = data.tickets.filter(t => t.reference == ticketReference).flatMap(r => r.attendees);
@@ -42,27 +39,30 @@
 
 <div class="card">
     <h2>Find Out More</h2>
-    <p>Enter your ticket reference number:</p>
+    <p>Enter your ticket reference:</p>
     <input placeholder="" bind:value={ticketReference}/>
 </div>
         
 {#if ticketReferenceEntered}
     <div class="card">
         <h1 class="title">{invitees}</h1>
-        <p>Congratulations for getting a ticket for DanFest in this year's ballot. Details of your ticket are below:</p>
+        <p class="spreadLineHeight">Congratulations for getting a ticket for DanFest in this year's ballot. Details of your ticket are below:</p>
 
         <h1>Saturday 16th December 2023</h1>
 
         <div class="ticket">
             <div class="ticketContent">
-                    <h1>Food, Drinks and Games</h1>
                     <div class="row">
-                        <Icon src={ImLocation} />
-                        <p>The New Inn, Ealing</p>
+                        <img class="icon" src="/icons/place.png" alt="location"/>
+                        <h1>BREWDOG, EALING</h1>
                     </div>
                     <div class="row">
-                        <Icon src={ImClock} />
-                        <p>7:00pm - late</p>
+                        <img class="icon" src="/icons/clock.png" alt="time"/>
+                        <p>7:00PM</p>
+                    </div>
+                    <div class="row">
+                        <img class="icon" src="/icons/share.png" alt="acitivies"/>
+                        <p>Food, drinks and the inaugural DanFest Trophy</p>
                     </div>
             </div>
         </div>
@@ -197,7 +197,7 @@
     .ticketContent{
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
     }
     
     .title {
@@ -206,7 +206,8 @@
 
     .row {
         display: flex;
-        gap: 0.3rem;
+        gap: 0.75rem;
+        letter-spacing: 0.075rem;
     }
 
     input {
@@ -218,5 +219,13 @@
 
         -webkit-appearance: none;
         -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .icon {
+        height: 1rem;
+	}
+
+    .spreadLineHeight {
+        line-height: 1.5rem;
     }
 </style>

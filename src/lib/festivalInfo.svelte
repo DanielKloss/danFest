@@ -1,17 +1,13 @@
 <script lang="ts">
     import festival from '@prisma/client';
-    import Icon from 'svelte-icons-pack/Icon.svelte';
-    import ImLocation from "svelte-icons-pack/im/ImLocation";
 
     export let currentFestival: festival;
-
-    console.log(currentFestival)
 </script>
 
 <div class="card">
   <h1 class="title">{currentFestival.year} - {currentFestival.title}</h1>
   <div class="row">
-    <Icon src={ImLocation} />
+    <img class="icon" src="/icons/place.png" alt="location"/>
     <p class="location">{currentFestival.location.name}</p>
     {#each currentFestival.subLocations as subLocation}
       <span class="subLocation">{subLocation.subLocation.name}</span>
@@ -28,10 +24,20 @@
 </div>
 
 <style>
+  .icon {
+    height: 1rem;
+    align-self: center;
+  }
+
   .row {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: 0.5rem;
+  }
+
+  .row > p, span {
+    display: flex;
+    align-items: center;
   }
 
   .title {
