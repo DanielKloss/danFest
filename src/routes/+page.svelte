@@ -6,10 +6,11 @@
     let ticketReference: string;
 
     $: ticketReferenceEntered = data.tickets.filter(t => t.reference == ticketReference).length > 0;
-    $: ticketReferenceEntered == true ? () => {
+    $: { if(ticketReferenceEntered == true){
         document.getElementById("referenceInput")?.blur();
         window.scrollTo(0, document.body.scrollHeight);
-     } : console.log("Dont close");
+     }
+    }
     $: invitees = data.tickets.filter(t => t.reference == ticketReference).flatMap(r => r.attendees);
     $: attendingStatus = data.tickets.filter(t => t.reference == ticketReference).flatMap(r => r.attending);
 
