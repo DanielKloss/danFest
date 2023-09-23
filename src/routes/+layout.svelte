@@ -5,6 +5,10 @@
   import NavBar from "$lib/navBar.svelte"; 
 </script>
 
+<div class="header">
+	<a class="title" href="/">DANFEST</a>
+</div>
+
 <NavBar/>
 
 <main>
@@ -21,4 +25,20 @@
   main {
     margin-left: 1rem;
   }
+
+  .header {
+		list-style-type: none;
+		background-color: #DE0000;
+		padding: 0.5rem 0.5rem 0rem 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.title {
+		align-self: stretch;
+		font-size: 4rem;
+		font-family: "carbon-block";
+		background-color: #DE0000;
+		border:none;
+		cursor: pointer;
+	}
 </style>

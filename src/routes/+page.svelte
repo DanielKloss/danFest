@@ -24,7 +24,7 @@
 </script>
 
 <div class="card">
-    <h1 class="title">DanFest 2023</h1>
+    <h1 class="title">DANFEST 2023</h1>
     {#each data.tickets as ticket}
         <div class="ticketStatus">
             <p>{ticket.attendees}</p>
@@ -38,7 +38,7 @@
 </div>
 
 <div class="card">
-    <h2>Find Out More</h2>
+    <h2 class="title">FIND OUT MORE</h2>
     <p>Enter your ticket reference:</p>
     <input id="referenceInput" placeholder="" bind:value={ticketReference}/>
 </div>
@@ -201,7 +201,8 @@
     }
     
     .title {
-        font-size: 2rem;
+        font-size: 1.25rem;
+        letter-spacing: 0.1rem;
     }
 
     .row {

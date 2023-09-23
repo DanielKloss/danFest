@@ -41,18 +41,19 @@
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
     margin: 0;
   }
 
   .location {
-    font-size: 1.5rem;
     font-style: italic;
     margin-right: 0.5rem;
   }
 
   .subLocation {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-left: 0;
     background-color: #838383;
     border-radius: 10px;

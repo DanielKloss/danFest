@@ -15,11 +15,11 @@
 <div class="tableContainer">
     <div class="group">
         <div class="card">
-            <h2>Hall of Fame</h2>
+            <h2>HALL OF FAME</h2>
             <div class="table">
                 <div class="row header">
-                    <p>Name</p>
-                    <p style="text-align: center;">Attended</p>
+                    <p>NAME</p>
+                    <p style="text-align: center;">ATTENDED</p>
                     <p style="text-align: right;"></p>
                 </div>
                 {#each attendees as attendee}
@@ -35,11 +35,11 @@
 
     <div class="group">
         <div class="card">
-            <h2>Venues</h2>
+            <h2>VENUES</h2>
             <div class="table">
                 <div class="row header">
-                    <p>Name</p>
-                    <p style="text-align: center;">Hosted</p>
+                    <p>NAME</p>
+                    <p style="text-align: center;">HOSTED</p>
                     <p style="text-align: right;"></p>
                 </div>
                 {#each locations as location}
@@ -53,11 +53,11 @@
         </div>
 
         <div class="card">
-            <h2>Activity Types</h2>
+            <h2>ACTIVITY TYPES</h2>
             <div class="table">
                 <div class="row header">
-                    <p>Name</p>
-                    <p style="text-align: center;">Fests</p>
+                    <p>NAME</p>
+                    <p style="text-align: center;">FESTS</p>
                     <p style="text-align: right;"></p>
                 </div>
                 {#each subLocations as subLocation}
@@ -88,6 +88,7 @@
     .header {
         font-weight: bold;
         margin-bottom: 0.5rem;
+        letter-spacing: 0.1rem;
     }
 
     .row {
@@ -105,4 +106,9 @@
     }
 
     div.table > div:nth-of-type(even){background-color:lightgray;}  
+
+    h2 {
+        letter-spacing: 0.1rem;
+        padding-left: 0.5rem;
+    }
 </style>

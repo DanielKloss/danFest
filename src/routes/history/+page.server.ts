@@ -31,7 +31,19 @@ export async function load() {
 								last_name: true
 							}
 						}
-					}
+					},
+					orderBy: [
+						{
+							attendee: {
+								first_name: 'asc'
+							}
+						},
+						{
+							attendee: {
+								last_name: 'asc'
+							}
+						}
+					]
 				}
 			},
 			orderBy: {
