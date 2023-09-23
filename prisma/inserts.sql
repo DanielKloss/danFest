@@ -3,7 +3,7 @@ INSERT INTO attendee (id, first_name, last_name) VALUES (2, 'Georgie', 'Clarke')
 INSERT INTO attendee (id, first_name, last_name) VALUES (3, 'Jack', 'Jackson');
 INSERT INTO attendee (id, first_name, last_name) VALUES (4, 'Rob', 'Slade');
 INSERT INTO attendee (id, first_name, last_name) VALUES (5, 'Mark', 'Bridger');
-INSERT INTO attendee (id, first_name, last_name) VALUES (6, 'David', 'Gluckstien');
+INSERT INTO attendee (id, first_name, last_name) VALUES (6, 'David', 'Gluckstein');
 INSERT INTO attendee (id, first_name, last_name) VALUES (7, 'Charlie', 'Broadbent');
 INSERT INTO attendee (id, first_name, last_name) VALUES (8, 'Matt', 'Hurst');
 INSERT INTO attendee (id, first_name, last_name) VALUES (9, 'Jonny', 'Dauncey');
@@ -43,6 +43,7 @@ INSERT INTO subLocation (id, name) VALUES (3, 'Themed Activity'); /*3*/
 INSERT INTO subLocation (id, name) VALUES (4, 'Ski Resort'); /*4*/
 INSERT INTO subLocation (id, name) VALUES (5, 'Restaurant'); /*5*/
 INSERT INTO subLocation (id, name) VALUES (6, 'Cinema'); /*6*/
+INSERT INTO subLocation (id, name) VALUES (7, 'Virtual'); /*7*/
 
 INSERT INTO festival (id, title, year, activities, location_id) VALUES (1, 'The one where they were in Birmingham', 2010, 'Fab ''n'' Fresh', 1); /*1*/
 INSERT INTO festival (id, title, year, activities, location_id) VALUES (2, 'The one where they went back to Courchevel', 2011, 'Skiing', 2); /*2*/
@@ -54,7 +55,7 @@ INSERT INTO festival (id, title, year, activities, location_id) VALUES (7, 'The 
 INSERT INTO festival (id, title, year, activities, location_id) VALUES (8, 'The one where Nom fell asleep on the sofa', 2017, 'Quiz, dinner and games at Dan''s house', 4); /*8*/
 INSERT INTO festival (id, title, year, activities, location_id) VALUES (9, 'The one where they Played Darts', 2018, 'Pub Dinner, Quiz by Nom and Flight Club', 4); /*9*/
 INSERT INTO festival (id, title, year, activities, location_id) VALUES (10, 'The one with the Inner Sanctum', 2019, 'Pizza and games at Dan''s', 4); /*10*/
-INSERT INTO festival (id, title, year, activities, location_id) VALUES (11, 'The one that was virtual', 2020, 'Virtual games: Only Connect, Jackbox and Amoung Us', 4); /*11*/
+INSERT INTO festival (id, title, year, activities, location_id) VALUES (11, 'The one that was virtual', 2020, 'Virtual games: Only Connect, Jackbox and Among Us', 4); /*11*/
 INSERT INTO festival (id, title, year, activities, location_id) VALUES (12, 'The one that was virtual reality', 2021, 'Navrtar Virtual Reality', 4); /*12*/
 INSERT INTO festival (id, title, year, activities, location_id) VALUES (13, 'The one where Thomas didn''t get a badge', 2022, 'Crazier Golf and Brewdog', 4); /*13*/
 
@@ -74,8 +75,8 @@ INSERT INTO festival_subLocation (festival_id, subLocation_id) VALUES (8,2);
 INSERT INTO festival_subLocation (festival_id, subLocation_id) VALUES (9,1);
 INSERT INTO festival_subLocation (festival_id, subLocation_id) VALUES (9,3);
 INSERT INTO festival_subLocation (festival_id, subLocation_id) VALUES (10,2);
-INSERT INTO festival_subLocation (festival_id, subLocation_id) VALUES (11,2);
-INSERT INTO festival_subLocation (festival_id, subLocation_id) VALUES (12,2);
+INSERT INTO festival_subLocation (festival_id, subLocation_id) VALUES (11,7);
+INSERT INTO festival_subLocation (festival_id, subLocation_id) VALUES (12,3);
 INSERT INTO festival_subLocation (festival_id, subLocation_id) VALUES (13,3);
 INSERT INTO festival_subLocation (festival_id, subLocation_id) VALUES (13,1);
 

@@ -14,7 +14,19 @@ export async function load() {
             first_name: true,
             last_name: true,
             festivals: true
-        }
+        },
+        orderBy: [{
+            festivals: {
+                _count: 'desc'
+            }
+            },
+            {
+                first_name: 'asc'
+            },
+            {
+                last_name: 'asc'
+            }
+        ]
     });
 
     let locations = await prisma.location.findMany({
@@ -22,16 +34,26 @@ export async function load() {
             id: true,
             name: true,
             festivals: true
+        },
+        orderBy: {
+            festivals: {
+                _count: 'desc'
+            }
         }
     });
 
     let subLocations = await prisma.subLocation.findMany({
-			select: {
-				id: true,
-				name: true,
-				festivals: true
-			}
-		});
+        select: {
+            id: true,
+            name: true,
+            festivals: true
+        },
+        orderBy: {
+            festivals: {
+                _count: 'desc'
+            }
+        }
+    });
 
     await prisma.$disconnect();
 

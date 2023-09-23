@@ -11,24 +11,6 @@
     let locations: Array<locationWithFests> = data.locations;
     let subLocations: Array<subLocationWithFests> = data.subLocations;
 
-    attendees = attendees.sort(function (a, b) {
-        let attendeeA = a.festivals.length;
-        let attendeeB = b.festivals.length;
-        return attendeeA > attendeeB ? -1 : attendeeA > attendeeB ? 1 : 0;
-    });
-
-    locations = data.locations.sort(function (a, b) {
-        let locationA = a.festivals.length;
-        let locationB = b.festivals.length;
-        return locationA > locationB ? -1 : locationA > locationB ? 1 : 0;
-    });
-
-    subLocations = data.subLocations.sort(function (a, b) {
-        let locationA = a.festivals.length;
-        let locationB = b.festivals.length;
-        return locationA > locationB ? -1 : locationA > locationB ? 1 : 0;
-    });
-
 </script>
 <div class="tableContainer">
     <div class="group">
