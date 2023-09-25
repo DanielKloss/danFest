@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 
     export let data : PageData;
@@ -21,6 +22,14 @@
             }
         });
     }
+
+    onMount(() => {
+        document.onkeydown = function (e) {
+            if(e.key == "Enter"){
+                document.getElementById("referenceInput")?.blur();
+            }
+        }
+    })
 </script>
 
 <div class="card">
