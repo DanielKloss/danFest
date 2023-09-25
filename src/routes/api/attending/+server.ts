@@ -6,7 +6,7 @@ export async function POST({ request }) {
 
 	const prisma = new PrismaClient();
 
-    const session = await prisma.ticket2022.update({
+    const session = await prisma.ticket2023.update({
         where: {
             id: requestData.id
         },
