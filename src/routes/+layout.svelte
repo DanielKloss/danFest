@@ -22,13 +22,13 @@
 <NavBar/>
 
 <main>
-  <!-- {#if $navigating}
+  {#if $navigating}
     <div style="display: flex; justify-content:center">
       <Circle color="#DE0000"/>
     </div>
-  {:else} -->
+  {:else}
       <slot />
-  <!-- {/if} -->
+  {/if}
 </main>
 
 <style>
