@@ -1,8 +1,18 @@
-<script>
+<script lang="ts">
+  import { onNavigate } from '$app/navigation';
+  import { fade } from 'svelte/transition';
   import { Circle } from 'svelte-loading-spinners'
   import { navigating } from '$app/stores'
   import "../app.css";
   import NavBar from "$lib/navBar.svelte"; 
+
+  onNavigate (() => {
+    if (!document.startViewTransition) return;
+
+    return new Promise((fulfil) => {
+      document.startViewTransition(() => new Promise(fulfil));
+    })
+  });
 </script>
 
 <div class="header">
@@ -12,13 +22,13 @@
 <NavBar/>
 
 <main>
-  {#if $navigating}
+  <!-- {#if $navigating}
     <div style="display: flex; justify-content:center">
       <Circle color="#DE0000"/>
     </div>
-  {:else}
-    <slot />
-  {/if}
+  {:else} -->
+      <slot />
+  <!-- {/if} -->
 </main>
 
 <style>
