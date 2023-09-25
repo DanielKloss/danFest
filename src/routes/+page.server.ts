@@ -10,6 +10,9 @@ export async function load() {
 			reference: true,
 			attendees: true,
 			attending: true
+		},
+		orderBy: {
+			attendees: "asc"
 		}
 	});
 
