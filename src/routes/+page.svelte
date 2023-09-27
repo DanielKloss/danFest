@@ -14,7 +14,7 @@
         data.tickets.filter(t => t.reference == ticketReference)[0].attending = status;
         data.tickets = data.tickets;
 
-        const attendingStatusPostResult = await fetch('/api/attending', {
+        await fetch('/api/attending', {
             method: 'POST',
             body: JSON.stringify(data.tickets.filter(t => t.reference == ticketReference)[0]),
             headers: {
@@ -23,7 +23,15 @@
         });
     }
 
+    function setReference(){
+        if(ticketReferenceEntered){
+            localStorage.setItem("reference", ticketReference);
+        }
+    }
+
     onMount(() => {
+        ticketReference = localStorage.getItem("reference") || "";
+
         document.onkeydown = function (e) {
             if(e.key == "Enter"){
                 document.getElementById("referenceInput")?.blur();
@@ -49,7 +57,7 @@
 <div class="card">
     <h2 class="title">FIND OUT MORE</h2>
     <p>Enter your ticket reference:</p>
-    <input id="referenceInput" placeholder="" bind:value={ticketReference}/>
+    <input id="referenceInput" placeholder="" bind:value={ticketReference} on:blur={() => setReference()}/>
 </div>
         
 {#if ticketReferenceEntered}
